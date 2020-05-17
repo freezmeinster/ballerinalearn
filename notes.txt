@@ -1,0 +1,29 @@
+Ballerina yang saya gunakan adalah versi :
+
+jBallerina 1.2.4
+Language specification 2020R1
+Ballerina tool 0.8.5
+
+pada versi ini saya menggunakan jdk default dari ubuntu 20.04 dan mengeluarkan warning
+Incompatible JRE version '11.0.7' found. This ballerina program supports running on JRE version '1.8.*'
+
+Hasil testing simple hallo world pada laptop vaio dengan spek :
+Proc = Intel Core i7-2640M 2.8 GHz turbo boost 3.50 GHz -> 2 Core / 4 Thread
+Memory = 8 GB
+Storage = SSD 
+Test tools = wrk
+
+Command :
+wrk -c 10 -d 10 -t 4 http://localhost:7070/hello/sayHello
+
+Output :
+Running 10s test @ http://localhost:7070/hello/sayHello
+  4 threads and 10 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     3.77ms   15.50ms 226.30ms   98.25%
+    Req/Sec     1.22k   514.11     2.28k    63.78%
+  47691 requests in 10.01s, 6.05MB read
+Requests/sec:   4766.34
+Transfer/sec:    619.07KB
+
+Mampu mengeluarkan output 4766 Request per detik. Sangat impresif
